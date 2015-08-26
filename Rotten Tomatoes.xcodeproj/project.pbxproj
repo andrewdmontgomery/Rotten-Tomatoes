@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B9DFA39A808E2CCBC0289DD /* libPods-Rotten Tomatoes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 286089100C9D005A2C1E693B /* libPods-Rotten Tomatoes.a */; };
+		49244B051B8D6ACF004AB01A /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49244B041B8D6ACF004AB01A /* MovieDetailsViewController.swift */; };
 		498B89E11B8D40C2008DF28B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498B89E01B8D40C2008DF28B /* AppDelegate.swift */; };
 		498B89E61B8D40C2008DF28B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 498B89E41B8D40C2008DF28B /* Main.storyboard */; };
 		498B89E81B8D40C2008DF28B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 498B89E71B8D40C2008DF28B /* Images.xcassets */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		286089100C9D005A2C1E693B /* libPods-Rotten Tomatoes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Rotten Tomatoes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49244B011B8D685D004AB01A /* Rotten Tomatoes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rotten Tomatoes-Bridging-Header.h"; sourceTree = "<group>"; };
+		49244B041B8D6ACF004AB01A /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		498B89DB1B8D40C2008DF28B /* Rotten Tomatoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rotten Tomatoes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		498B89DF1B8D40C2008DF28B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		498B89E01B8D40C2008DF28B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				498B8A001B8D40DE008DF28B /* MoviesViewController.swift */,
+				49244B041B8D6ACF004AB01A /* MovieDetailsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49244B051B8D6ACF004AB01A /* MovieDetailsViewController.swift in Sources */,
 				498B89E11B8D40C2008DF28B /* AppDelegate.swift in Sources */,
 				498B8A011B8D40DE008DF28B /* MoviesViewController.swift in Sources */,
 				498B8A041B8D63CF008DF28B /* MovieCell.swift in Sources */,
