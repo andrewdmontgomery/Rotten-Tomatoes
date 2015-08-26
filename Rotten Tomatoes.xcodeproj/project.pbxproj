@@ -13,6 +13,7 @@
 		498B89EB1B8D40C2008DF28B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 498B89E91B8D40C2008DF28B /* LaunchScreen.xib */; };
 		498B89F71B8D40C2008DF28B /* Rotten_TomatoesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498B89F61B8D40C2008DF28B /* Rotten_TomatoesTests.swift */; };
 		498B8A011B8D40DE008DF28B /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498B8A001B8D40DE008DF28B /* MoviesViewController.swift */; };
+		498B8A041B8D63CF008DF28B /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498B8A031B8D63CF008DF28B /* MovieCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		498B89F51B8D40C2008DF28B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		498B89F61B8D40C2008DF28B /* Rotten_TomatoesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotten_TomatoesTests.swift; sourceTree = "<group>"; };
 		498B8A001B8D40DE008DF28B /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
+		498B8A031B8D63CF008DF28B /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		498B89DD1B8D40C2008DF28B /* Rotten Tomatoes */ = {
 			isa = PBXGroup;
 			children = (
+				498B8A051B8D63D4008DF28B /* Views */,
 				498B8A021B8D40E6008DF28B /* View Controllers */,
 				498B89E01B8D40C2008DF28B /* AppDelegate.swift */,
 				498B89E41B8D40C2008DF28B /* Main.storyboard */,
@@ -118,6 +121,14 @@
 				498B8A001B8D40DE008DF28B /* MoviesViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		498B8A051B8D63D4008DF28B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				498B8A031B8D63CF008DF28B /* MovieCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +233,7 @@
 			files = (
 				498B89E11B8D40C2008DF28B /* AppDelegate.swift in Sources */,
 				498B8A011B8D40DE008DF28B /* MoviesViewController.swift in Sources */,
+				498B8A041B8D63CF008DF28B /* MovieCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
