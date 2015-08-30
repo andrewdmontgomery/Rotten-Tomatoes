@@ -24,6 +24,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
             if let json = json {
                 self.movies = json["movies"] as? [NSDictionary]
                 self.tableView.reloadData()
+                println("response: \(self.movies)")
             }
         }
         
@@ -52,6 +53,22 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         
         cell.titleLabel.text = movie["title"] as? String
         cell.synopsisLabel.text = movie["synopsis"] as? String
+        
+        if let abridgedCast = movie.valueForKeyPath("abridged_cast") as? NSArray {
+            //var actors = Array<String>()
+            var actors: [String] = []
+            
+            for index in 0...1 {
+                if let castMember = abridgedCast[index] as? NSDictionary {
+                    if let castMemberName = castMember["name"] as? String {
+                        actors.append(castMemberName)
+                    }
+                }
+            }
+            cell.actorsLabel.text = ", ".join(actors)
+        } else {
+            cell.actorsLabel.text = ""
+        }
         
         let url = NSURL(string: movie.valueForKeyPath("posters.thumbnail") as! String)!
         cell.posterView.setImageWithURL(url)

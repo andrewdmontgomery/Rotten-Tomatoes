@@ -22,9 +22,19 @@ class MovieDetailsViewController: UIViewController {
         titleLabel.text = movie["title"] as? String
         synopsisLabel.text = movie["synopsis"] as? String
         
-        let url = NSURL(string: movie.valueForKeyPath("posters.thumbnail") as! String)!
-        imageView.setImageWithURL(url)
         
+        var urlString = movie.valueForKeyPath("posters.thumbnail") as! String
+        
+        // Hack to get the high rez poster art
+        var range = urlString.rangeOfString(".*cloudfront.net/", options: .RegularExpressionSearch)
+        if let range = range {
+            urlString = urlString.stringByReplacingCharactersInRange(range, withString: "https://content6.flixster.com/")
+        }
+
+        if let url = NSURL(string: urlString) {
+            imageView.setImageWithURL(url)
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
