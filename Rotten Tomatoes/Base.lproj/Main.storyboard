@@ -16,6 +16,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="117" id="9Ib-ky-5lC" customClass="MovieCell" customModule="Rotten_Tomatoes" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="86" width="320" height="117"/>
@@ -51,6 +52,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
                                         <connections>
                                             <outlet property="actorsLabel" destination="DJL-4f-61q" id="Icv-Qj-Hqr"/>
                                             <outlet property="posterView" destination="hmc-oh-OEr" id="e9A-P1-vLr"/>
@@ -61,11 +63,20 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dfh-AW-b2d">
+                                <rect key="frame" x="0.0" y="43" width="320" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Movies" id="RYJ-je-Zu5"/>
                     <connections>
+                        <outlet property="networkErrorLabel" destination="Dfh-AW-b2d" id="l1g-BA-zky"/>
                         <outlet property="tableView" destination="ENN-QF-ffW" id="HQh-wS-inO"/>
                     </connections>
                 </viewController>
