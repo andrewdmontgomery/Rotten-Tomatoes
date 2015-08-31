@@ -23,16 +23,18 @@ class MovieDetailsViewController: UIViewController {
         synopsisLabel.text = movie["synopsis"] as? String
         
         
-        var urlString = movie.valueForKeyPath("posters.thumbnail") as! String
+        var urlStringThumb = movie.valueForKeyPath("posters.thumbnail") as! String
+        var urlStringFull = ""
         
         // Hack to get the high rez poster art
-        var range = urlString.rangeOfString(".*cloudfront.net/", options: .RegularExpressionSearch)
+        var range = urlStringThumb.rangeOfString(".*cloudfront.net/", options: .RegularExpressionSearch)
         if let range = range {
-            urlString = urlString.stringByReplacingCharactersInRange(range, withString: "https://content6.flixster.com/")
+            urlStringFull = urlStringThumb.stringByReplacingCharactersInRange(range, withString: "https://content6.flixster.com/")
         }
 
-        if let url = NSURL(string: urlString) {
-            imageView.setImageWithURL(url)
+        // Load the thumbnail first
+        if let urlThumb = NSURL(string: urlStringThumb) {
+            imageView.setImageWithURL(urlThumb)
         }
 
     }
