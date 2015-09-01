@@ -15,6 +15,7 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var synopsisLabel: UILabel!
     
     var movie: NSDictionary!
+//    var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +23,25 @@ class MovieDetailsViewController: UIViewController {
         titleLabel.text = movie["title"] as? String
         synopsisLabel.text = movie["synopsis"] as? String
         
-        let url = NSURL(string: movie.valueForKeyPath("posters.thumbnail") as! String)!
-        imageView.setImageWithURL(url)
+        var urlStringThumb = movie.valueForKeyPath("posters.thumbnail") as! String
+        var urlStringFull = ""
         
+        // Hack to get the high rez poster art
+        var range = urlStringThumb.rangeOfString(".*cloudfront.net/", options: .RegularExpressionSearch)
+        if let range = range {
+            urlStringFull = urlStringThumb.stringByReplacingCharactersInRange(range, withString: "https://content6.flixster.com/")
+        }
+        
+        // Load the thumbnail first
+        if let urlThumb = NSURL(string: urlStringThumb) {
+            imageView.setImageWithURL(urlThumb)
+        }
+
+        // Then set full image
+        if let urlFull = NSURL(string: urlStringFull) {
+            imageView.setImageWithURL(urlFull)
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,7 +49,6 @@ class MovieDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
